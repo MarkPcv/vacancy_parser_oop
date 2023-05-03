@@ -8,6 +8,7 @@ packages = [{include = "vacancy_parser_oop"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+requests = "^2.29.0"
 
 
 [build-system]
