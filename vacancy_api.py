@@ -73,7 +73,7 @@ class SuperJobAPI(MasterAPI):
         }
         # Header with API key for GET request
         headers = {
-            'X-Api-App-Id': sj.api_key,
+            'X-Api-App-Id': self.api_key,
         }
         response = requests.get(self.__base_url, params, headers=headers)
         return response.json()
@@ -87,6 +87,6 @@ class SuperJobAPI(MasterAPI):
 
 # SuperJob Test
 
-# sj = SuperJobAPI()
-# with open("sample2.json", "w", encoding='utf8') as outfile:
-#     json.dump(sj.get_vacancies('Python'), outfile, indent='\t', ensure_ascii=False)
+sj = SuperJobAPI()
+with open("sample2.json", "w", encoding='utf8') as outfile:
+    json.dump(sj.get_vacancies('Python'), outfile, indent='\t', ensure_ascii=False)
