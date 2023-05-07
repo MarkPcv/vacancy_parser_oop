@@ -43,11 +43,11 @@ class Vacancy:
     def __str__(self):
         """"Returns a user representation of Vacancy class"""
         return (
-            f"Name:     {self.name}\n"
-            f"URL:      {self.url}\n"
-            f"Salary:   {self.salary}\n"
-            f"Description: {self.description}"
-            f"Requirement: {self.requirement}"
+            f"Name:         {self.name}\n"
+            f"URL:          {self.url}\n"
+            f"Salary:       {self.salary}\n"
+            f"Description:  {self.description}\n"
+            f"Requirement:  {self.requirement}\n"
         )
 
     def __eq__(self, other) -> bool:
