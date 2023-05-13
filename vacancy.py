@@ -47,7 +47,7 @@ class Vacancy:
             f"URL:          {self.url}\n"
             f"Salary:       {self.salary}\n"
             f"Company:      {self.employer}\n"
-            f"Requirement:  {self.requirement}\n"
+            f"Requirement:\n  {self.requirement}\n"
         )
 
     def __eq__(self, other) -> bool:
