@@ -1,7 +1,7 @@
 class Vacancy:
     """Class to represent vacancy information"""
     def __init__(self, name: str, url: str, salary: int,
-                 description: str, requirement: str) -> None:
+                 employer: str, requirement: str) -> None:
         """
         Instance initialisation
 
@@ -24,8 +24,8 @@ class Vacancy:
             self.salary = salary
         else:
             raise TypeError('Vacancy salary must be integer')
-        if type(description) is str:
-            self.description = description
+        if type(employer) is str:
+            self.employer = employer
         else:
             raise TypeError('Vacancy description must be integer')
         if type(requirement) is str:
@@ -37,7 +37,7 @@ class Vacancy:
         """Returns a developer representation of Vacancy class"""
         return (
             f"Vacancy({self.name}, {self.url}, {self.salary}, "
-            f"{self.description}, {self.requirement})"
+            f"{self.employer}, {self.requirement})"
         )
 
     def __str__(self):
@@ -46,7 +46,7 @@ class Vacancy:
             f"Name:         {self.name}\n"
             f"URL:          {self.url}\n"
             f"Salary:       {self.salary}\n"
-            f"Description:  {self.description}\n"
+            f"Company:      {self.employer}\n"
             f"Requirement:  {self.requirement}\n"
         )
 
