@@ -196,7 +196,7 @@ class SuperJobAPI(MasterAPI):
         params = {
             'keyword': search_text,
             'c': [1],  # location - Russia
-            'page': 0,  # page number
+            'page': page,  # page number
             'count': 20,  # 20 vacancies per page
         }
         # Header with API key for GET request
