@@ -4,15 +4,25 @@ version = "0.1.0"
 description = ""
 authors = ["Mark Pochivalov <pochivalov.mark@gmail.com>"]
 readme = "README.md"
-packages = [{include = "vacancy_parser_oop"}]
+packages = [
+    {include = "services"},
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-requests = "^2.29.0"
+requests = "^2.30.0"
 
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.3.1"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]
+
+[tool.poetry.scripts]
+start = 'main:main'
 
 [build-system]
 requires = ["poetry-core"]
