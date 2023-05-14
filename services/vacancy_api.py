@@ -12,7 +12,7 @@ USD_RATE = 77.36  # as of 12 May 2023
 class MasterAPI(ABC):
 
     @abstractmethod
-    def get_vacancies(self, search_text):
+    def search_vacancies(self, search_text):
         pass
 
 
@@ -64,7 +64,7 @@ class HeadHunterAPI(MasterAPI):
         """
         self.__base_url = "https://api.hh.ru/vacancies"
 
-    def get_vacancies(self, search_text) -> list[Vacancy]:
+    def search_vacancies(self, search_text) -> list[Vacancy]:
         """
         Returns a list of vacancies (maximum 20) based on the search text
         """
@@ -156,7 +156,7 @@ class SuperJobAPI(MasterAPI):
         """
         self.__base_url = 'https://api.superjob.ru/2.0/vacancies/'
 
-    def get_vacancies(self, search_text):
+    def search_vacancies(self, search_text):
         """
         Returns a list of vacancies (maximum 20) based on the search text
         """
