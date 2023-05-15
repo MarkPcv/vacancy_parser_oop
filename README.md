@@ -19,9 +19,10 @@ salary is shown if minimum is omitted.
 - If vacancy's salary is displayed in US dollars then it is converted into 
 rubles. Please see `vacancy_api.py` for details
 
+---
 ## Installation and Run
 
-Use the package manager **poetry** to install all neccessary packages:
+Use the package manager **poetry** to install all necessary packages:
 ```bash
 poetry install
 ```
@@ -30,7 +31,10 @@ Run poetry script to **start** the program using Terminal (or just run main.py)
 poetry run start
 ```
 
+---
 ## Simple Algorithm
+
+The simple high-level algorithm of the programme is described below:
 1. User greeting
 2. Platform choice
 3. Input search query
@@ -41,3 +45,9 @@ poetry run start
    - Vacancy deletion procedure if needed
 7. Exit
 
+
+---
+## Tech Stack
+<img src="https://img.shields.io/badge/Python-blue?style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/GIT-blue?style=for-the-badge&logo=html&logoColor=white" />
+<img src="https://img.shields.io/badge/GIT-blue?style=for-the-badge&logo=poetry&logoColor=white" />
