@@ -1,5 +1,5 @@
-import saver
-import vacancy_api
+from services import saver
+from services import vacancy_api
 
 
 def get_platform_choice() -> int:
@@ -20,12 +20,12 @@ def get_platform_choice() -> int:
 def get_top_n() -> int:
     """
     Asks user to enter number of top vacancies (by salary) to display.
-    Maximum value is 10.
+    Maximum value is 25.
     """
     top_n = int(input("Please enter number to display "
-                      "by top salary (maximum 10): "))
+                      "by top salary (maximum 25): "))
     # Validate user choice
-    while top_n not in range(1, 11):
+    while top_n not in range(1, 26):
         top_n = int(input("Please enter correct number from 1 to 10: "))
 
     return top_n
@@ -127,4 +127,4 @@ def show_saved_vacancies(filename: str):
     for vacancy in saved_vacancies:
         print(vacancy)
         # Ask user to save the vacancy
-        delete_vacancy(vacancy)
+        delete_vacancy(vacancy, filename)

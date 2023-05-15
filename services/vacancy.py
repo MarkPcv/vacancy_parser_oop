@@ -33,21 +33,21 @@ class Vacancy:
         else:
             raise TypeError('Vacancy requirement must be integer')
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """Returns a developer representation of Vacancy class"""
         return (
             f"Vacancy({self.name}, {self.url}, {self.salary}, "
             f"{self.employer}, {self.requirement})"
         )
 
-    def __str__(self):
+    def __str__(self) -> str:
         """"Returns a user representation of Vacancy class"""
         return (
             f"Name:         {self.name}\n"
             f"URL:          {self.url}\n"
             f"Salary:       {self.salary}\n"
             f"Company:      {self.employer}\n"
-            f"Requirement:\n  {self.requirement}\n"
+            f"Requirement:\n{self.requirement}\n"
         )
 
     def __eq__(self, other) -> bool:

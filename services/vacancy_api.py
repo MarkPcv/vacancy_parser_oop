@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 import requests
 import os
 import json
-from vacancy import Vacancy
+from services.vacancy import Vacancy
 
 # Exchange rate of US dollars to Rubles
 # Some salaries are expressed in US dollars
@@ -21,6 +21,10 @@ class HeadHunterAPI(MasterAPI):
 
     @staticmethod
     def get_salary(vacancy: dict) -> int | None:
+        """
+        Determines the vacancy salary
+        :param vacancy: Vacancy object from API
+        """
         # Check if vacancy has salary
         if not vacancy['salary']:
             return None
@@ -66,7 +70,7 @@ class HeadHunterAPI(MasterAPI):
 
     def search_vacancies(self, search_text) -> list[Vacancy]:
         """
-        Returns a list of vacancies (maximum 20) based on the search text
+        Returns a list of vacancies (maximum 25) based on the search text
         """
         vacancies = []
         # Start vacancy search starting from first page till 20th
@@ -88,10 +92,10 @@ class HeadHunterAPI(MasterAPI):
                 except TypeError:
                     continue
                 # Check if list is full
-                if len(vacancies) == 20:
+                if len(vacancies) == 25:
                     break
             # Check if list is full
-            if len(vacancies) == 20:
+            if len(vacancies) == 25:
                 break
 
         return vacancies
@@ -118,6 +122,10 @@ class SuperJobAPI(MasterAPI):
 
     @staticmethod
     def get_salary(vacancy: dict) -> int | None:
+        """
+        Determines the vacancy salary
+        :param vacancy: Vacancy object from API
+        """
         # Check if vacancy has minimum salary
         if vacancy['payment_from'] == 0:
             # Checks if vacancy has maximum salary otherwise return None
@@ -158,7 +166,7 @@ class SuperJobAPI(MasterAPI):
 
     def search_vacancies(self, search_text):
         """
-        Returns a list of vacancies (maximum 20) based on the search text
+        Returns a list of vacancies (maximum 25) based on the search text
         """
         vacancies = []
         # Start vacancy search starting from first page till 20th
@@ -180,10 +188,10 @@ class SuperJobAPI(MasterAPI):
                 except TypeError:
                     continue
                 # Check if list is full
-                if len(vacancies) == 20:
+                if len(vacancies) == 25:
                     break
             # Check if list is full
-            if len(vacancies) == 20:
+            if len(vacancies) == 25:
                 break
 
         return vacancies

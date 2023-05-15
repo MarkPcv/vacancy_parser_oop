@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from vacancy import Vacancy
+from services.vacancy import Vacancy
 import json
 
 
@@ -33,7 +33,7 @@ class JSONSaver(MasterSaver):
             with open(self.filename, 'r', encoding='utf-8') as f:
                 vacancies = json.load(f)
         except json.JSONDecodeError:
-            print('Saving first vacancy')
+            pass
         # Write to file with added new vacancy
         with open(self.filename, 'w', encoding='utf-8') as f:
             vacancies.append(vacancy.__dict__)
@@ -41,7 +41,7 @@ class JSONSaver(MasterSaver):
 
     def get_vacancies_by_salary(self, lower_bound: int,
                                 upper_bound: int) -> list:
-        """Returns a list of vacancies by salary"""
+        """Returns a list of vacancies in the salary range"""
         vacancies = []
         with open(self.filename, 'r', encoding='utf-8') as f:
             for dict_vacancy in json.load(f):
@@ -65,6 +65,6 @@ class JSONSaver(MasterSaver):
             json.dump(vacancies, f, ensure_ascii=False, indent='\t')
 
     def clear_file(self):
-        """Clears the data in the file"""
+        """Creates new file or clears the data in the existing file"""
         f = open(self.filename, 'w')
         f.close()

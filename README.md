@@ -10,14 +10,14 @@ affect the search results:
 - Search only includes vacancies in _Russian Federation_
 - Only _minimum_ salary is taken into account and displayed to user. Maximum
 salary is shown if minimum is omitted.
-- Vacancy is _ignored_ if it does not have:
+- Vacancy is _ignored_ if it does not have following:
     - salary
     - vacancy name
     - vacancy URL link
     - requirement
     - company name
-- If vacancy's salary is displayed in US dollars then it is converted into 
-rubles. Please see `vacancy_api.py` for details
+- If vacancy's salary is given in US dollars(USD) then it is converted into 
+rubles(RUB). Please see `vacancy_api.py` for details
 
 ---
 ## Installation and Run
@@ -34,11 +34,12 @@ poetry run start
 ---
 ## Simple Algorithm
 
-The simple high-level algorithm of the programme is described below:
+The simple high-level algorithm of the program is described below:
 1. User greeting
 2. Platform choice
 3. Input search query
-4. Determination of top N vacancies sorted by salary
+4. Determination of top N vacancies sorted by salary. Only maximum of 25 
+vacancies will be displayed.
 5. Representation of each of top N vacancies:
    - Vacancy save procedure if needed
 6. Representation of saved vacancies in JSON file
@@ -49,5 +50,5 @@ The simple high-level algorithm of the programme is described below:
 ---
 ## Tech Stack
 <img src="https://img.shields.io/badge/Python-blue?style=for-the-badge&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/GIT-blue?style=for-the-badge&logo=html&logoColor=white" />
-<img src="https://img.shields.io/badge/GIT-blue?style=for-the-badge&logo=poetry&logoColor=white" />
+<img src="https://img.shields.io/badge/GIT-blue?style=for-the-badge&logo=git&logoColor=white" />
+<img src="https://img.shields.io/badge/Poetry-blue?style=for-the-badge&logo=poetry&logoColor=white" />
