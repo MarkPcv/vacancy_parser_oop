@@ -1,6 +1,6 @@
-# Vacancy Parser using OOP
+# Project "Vacancy Parser"
 
-## Project Description
+## Description
 This project allows user to search vacancies using two API platforms: 
 **HeadHunter** and **SuperJob**. Both platforms are popular in CIS region and
 are commonly used by employees and employers. The search results can be 
