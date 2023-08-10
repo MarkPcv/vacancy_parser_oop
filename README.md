@@ -1,4 +1,4 @@
-# Project "Vacancy Parser"
+# Project «Vacancy Parser»
 
 ## Description
 This project allows user to search vacancies using two API platforms: 
